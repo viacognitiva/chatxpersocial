@@ -202,10 +202,6 @@ app.controller('chatController', ['$scope','$http','$window', function($scope,$h
              userBox.className = 'direct-chat-name pull-left';
              div0.className = 'direct-chat-msg right';
              div.className = 'direct-chat-text';
-             var img = document.createElement('img');
-             img.className = 'direct-chat-img';
-             img.src = 'http://intranet.vbofficeware.com.br/fileserver/imagem/img_usuario.png';
-             div0.appendChild(img);
              div0.appendChild(div);
 
              userBox.appendChild(user);
@@ -227,17 +223,11 @@ app.controller('chatController', ['$scope','$http','$window', function($scope,$h
             divHora.appendChild(textHora);
 
             var user = document.createTextNode(' ');
-            var userBox = document.createElement('span');
-            user = document.createElement('img');
-            user.className = 'direct-chat-img';
-            user.src = 'https://xpersocialunascendent-smithsonite.mybluemix.net/images/logo_fb.jpg';
             div.className = 'direct-chat-text';
 
-            userBox.appendChild(user);
 
             var message = document.createTextNode(text);
             var messageBox = document.createElement('p');
-            messageBox.appendChild(userBox);
             div.appendChild(message);
             messageBox.appendChild(div);
             messageBox.appendChild(divHora)

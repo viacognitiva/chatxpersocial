@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/xpersocial.iml" filepath="$PROJECT_DIR$/xpersocial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chatxpersocial.iml" filepath="$PROJECT_DIR$/chatxpersocial.iml" />
     </modules>
   </component>
 </project>
