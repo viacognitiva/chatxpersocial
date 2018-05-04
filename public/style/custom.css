@@ -63,7 +63,7 @@
   }
   #chat_box {
     box-sizing: border-box;
-    height:85%;
+    height:80%;
     overflow: auto;
   }
 
