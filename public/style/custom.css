@@ -14,6 +14,11 @@
   label{
     color:#fff
   }
+  .box-title{
+    font-weight: bold;
+    color: #fff;
+    font-size: 21px;
+  }
   .row{
     margin:0
   }
@@ -36,7 +41,7 @@
     font-size:12px
   }
   .box-header{
-    background-color:#fff;
+    background-color:#a81f41;
   }
   .box{
       background-color: transparent;
@@ -44,7 +49,7 @@
       border-radius:0;
       box-shadow:none;
       border-width:3px 1px 1px;
-      border-color: #d2d6de;
+      border-color: #a81f41;
       border-style:solid
   }
   .box.box-primary{
