@@ -63,7 +63,7 @@
   }
   #chat_box {
     box-sizing: border-box;
-    height:80%;
+    height:82%;
     overflow: auto;
   }
 
@@ -116,3 +116,6 @@
   .right .direct-chat-text{
     margin:0
   }
+.azul{
+    color:#0062aa
+}
