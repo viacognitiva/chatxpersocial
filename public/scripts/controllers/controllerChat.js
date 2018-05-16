@@ -149,7 +149,28 @@ app.controller('chatController', ['$scope','$http','$window', function($scope,$h
                 var response = JSON.parse(xhr.responseText);
                 text = response.output.text; // Only display the first response
                 context = response.context; // Store the context for next round of questions
-                //console.log("Got response from Watson: ", JSON.stringify(response));
+                //console.log("Got response from Watson: ");
+                //console.log(response);
+
+                if(response.output.nodes_visited == 'Em outros casos'){
+
+                    var logData = {
+                        idchat: response.context.conversation_id,
+                        texto: response.input.text
+                    }
+
+                    $http.post('/treinar', logData)
+                        .then(Success)
+                        .catch(Failure);
+
+                    function Success(response) {
+                        return response.data;
+                    }
+
+                    function Failure(error) {
+                        console.log('Error: ' + JSON.stringify(error));
+                    }
+                }
 
                  if(response.intents.length > 0 ){
                     if(response.intents[0].intent == 'Finalizar_Conversa' && response.entities.length == 0){

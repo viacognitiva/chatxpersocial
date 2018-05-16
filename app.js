@@ -22,7 +22,7 @@ var methodOverride = require('method-override');
 var errorHandler = require('errorhandler');
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 9000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
@@ -49,6 +49,7 @@ app.get('/nlu', routes.nlu);
 app.get('/som', routes.textToSpeech);
 
 app.post('/salvar', cloudant.gravaUsuario);
+app.post('/treinar',cloudant.gravaOutros);
 app.post('/sendmail',correio.enviaCorreio);
 
 // =====================================
@@ -58,7 +59,6 @@ app.post('/api/watson', function (req, res) {
     processChatMessage(req, res);
 }); // End app.post 'api/watson'
 
-//http://localhost:9000/api/cloudant/viacognitiva
 app.get('/api/cloudant/:id', function (req, res) {
     cloudant.get(req, res);
 });

@@ -26,6 +26,7 @@ if(process.env.VCAP_SERVICES) {
 var dbname = process.env.CLOUDANT_DB;
 var cloudant = Cloudant({url:cloudant_url,account:user,password:password});
 db = cloudant.db.use(dbname);
+dbTreino = cloudant.db.use(process.env.CLOUDANT_DB_TREINO);
 
 var cloudant = {
 
@@ -56,6 +57,24 @@ var cloudant = {
 
         });
     },
+
+    gravaOutros : function(req, res){
+
+        var dados = {
+            idchat: req.body.idchat,
+            texto: req.body.texto,
+            data: new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"})
+        }
+
+        dbTreino.insert(dados,function(err, body, header) {
+
+            if (err) {
+                console.log('[dbTreino.insert] ', err.message);
+            }
+            res.status(200);
+
+        });
+    }
 };
 
 module.exports = cloudant;
